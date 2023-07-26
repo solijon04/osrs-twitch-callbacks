@@ -1,0 +1,27 @@
+<html>
+    <head>
+
+        <script type="application/javascript">
+            var url = "https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=";
+            var player = "AshenFlame";
+            function stats(url, player)
+            {
+                fetch(url + player, {
+                    method: "GET",
+                    withCredentials: true,                  
+                    crossorigin: true,
+                    //mode: 'no-cors',
+                })
+                .then((r) => r.text())
+                .then(d => {
+                    console.log("TEST:" +  d);
+                });
+            }
+            stats(url, player);
+        </script>
+    </head>
+  
+    <body>
+        <button onclick="stats(url, player)">CLICK ME</button>
+    </body>
+</html>
